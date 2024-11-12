@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>IF та умовні операції</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<h2 style="text-align:center">Введіть свій бал для визначення оцінки</h2>
+	
+	<label for="score">Введіть бал (0-100): </label>
+	<input type="number" id="score" min="0" max="100">
+	<button onclick="checkScore()">Перевірити оцінку</button>
+	
+	<p id="result"></p>
+
+	<script>
+		"use strict";
+		
+		function checkScore() {
+			let score = parseInt(document.getElementById("score").value);
+			let result = "";
+
+			if (score >= 88 && score <= 100) {
+				result = "Ваша оцінка: Відмінно!";
+			} else if (score >= 71 && score <= 87) {
+				result = "Ваша оцінка: Добре!";
+			} else if (score >= 50 && score <= 70) {
+				result = "Ваша оцінка: Задовільно!";
+			} else if (score >= 0 && score <= 49) {
+				result = "Ваша оцінка: Не задовільно!";
+			} else {
+				result = "Ви ввели неправильне значення!";
+			}
+
+			document.getElementById("result").innerHTML = result;
+
+			// Використання тернарної операції для визначення категорії оцінки
+			let category = (score >= 88 && score <= 100) ? "Відмінно" : 
+						   (score >= 71 && score <= 87) ? "Добре" : 
+						   (score >= 50 && score <= 70) ? "Задовільно" : 
+						   (score >= 0 && score <= 49) ? "Не задовільно" : 
+						   "Неправильне значення";
+
+			document.getElementById("result").innerHTML += `<br>Категорія оцінки за тернарною операцією: ${category}`;
+		}
+	</script>
+
+
+
+<ul>
+    <li>
+        <a class="home" href="../index.html">Повернутися на головну сторінку</a>
+    </li>
+</ul>
+</body>
+</html>
+

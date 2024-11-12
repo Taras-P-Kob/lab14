@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>IF</title>
+		<style>
+			body {
+				text-align: center;
+				font-family: Arial, sans-serif;
+			}
+		</style>
+
+    <link rel="stylesheet" href="../css/style.css">
+	</head>	
+	<body>
+		<h2>Демонстрація умовних операторів <strong>IF</strong></h2>
+		
+		<!-- Введення температури -->
+		<label for="temperature">Введіть температуру (°C):</label>
+		<input type="number" id="temperature" placeholder="Наприклад, 30">
+		<button onclick="checkTemperature()">Перевірити</button>
+		<p id="temperatureResult"></p>
+		
+		<!-- Введення настрою -->
+		<label for="mood">Введіть ваш настрій:</label>
+		<input type="text" id="mood" placeholder="Наприклад, щасливо">
+		<button onclick="checkMood()">Перевірити</button>
+		<p id="moodResult"></p>
+
+	
+		<script> 
+			"use strict";
+
+			function checkTemperature() {
+				let temperature = parseInt(document.getElementById("temperature").value);
+				let result = "";
+				if (temperature > 25) {
+					result = "Сьогодні жарко, вживайте багато води!";
+				} else {
+					result = "Сьогодні прохолодно, одягніть тепліший одяг.";
+				}
+				document.getElementById("temperatureResult").innerText = result;
+			}
+
+			function checkMood() {
+				let mood = document.getElementById("mood").value;
+				let result = "";
+				if (mood === "щасливо") {
+					result = "Я в чудовому настрої!";
+				} else if (mood === "сумно") {
+					result = "Не сумуйте, все буде добре!";
+				} else {
+					result = "Не зовсім зрозуміло, що ви відчуваєте: " + mood;
+				}
+				document.getElementById("moodResult").innerText = result;
+			}
+
+			
+		</script>
+
+        
+<ul>
+    <li>
+        <a class="home" href="../index.html">Повернутися на головну сторінку</a>
+    </li>
+	</body>
+</html>
+

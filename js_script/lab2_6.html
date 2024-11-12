@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>while</title>
+    <link rel="stylesheet" href="../css/style.css">
+	</head>	
+	<body>
+		<script> 
+			"use strict";
+			
+			let targetNumber = Math.floor(Math.random() * 50) + 1; // генеруємо випадкове число від 1 до 50
+			let attemptsLeft = 5; // кількість спроб
+			let userGuess; 
+			let answer = confirm("Хочете спробувати вгадати число від 1 до 50? У вас є 5 спроб!"); 
+			
+			if (answer) {
+				while (attemptsLeft > 0) {
+					userGuess = parseInt(prompt("Введіть число (спроб залишилось: " + attemptsLeft + "):")); 
+					attemptsLeft--;
+
+					if (userGuess === targetNumber) {
+						alert("Вітаємо! Ви вгадали число " + targetNumber + " за " + (5 - attemptsLeft) + " спроб.");
+						break;
+					} else if (userGuess > targetNumber) {
+						alert("Загадане число менше.");
+					} else {
+						alert("Загадане число більше.");
+					}
+
+					if (attemptsLeft === 0) {
+						alert("На жаль, спроби закінчилися. Загадане число було " + targetNumber + ".");
+					}
+				}
+			} else {
+				alert("Можливо, наступного разу!");
+			}
+		</script>
+
+
+<ul>
+    <li>
+        <a class="home" href="../index.html">Повернутися на головну сторінку</a>
+    </li>
+</ul>
+
+
+	</body>
+</html>

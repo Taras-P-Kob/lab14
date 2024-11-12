@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+		<title>Класифікація за віком</title>
+		    <link rel="stylesheet" href="../css/style.css">
+	</head>	
+	<body>
+		<script>
+			"use strict";
+			let age = parseInt(prompt("Введіть ваш вік")); 
+			let classification;
+
+			switch (true) {
+				case (age < 0):
+					classification = "недійсний вік";
+					break;
+				case (age < 12):
+					classification = "дитина"; 
+					break;
+				case (age < 18):
+					classification = "підліток"; 
+					break;
+				case (age < 65):
+					classification = "дорослий"; 
+					break;
+				default:
+					classification = "пенсіонер"; 
+			}
+			
+			document.write("Ви - ", classification);
+		</script>
+
+<ul>
+    <li>
+        <a class="home" href="../index.html">Повернутися на головну сторінку</a>
+    </li>
+</ul>
+		
+	</body>
+</html>
